@@ -1,2 +1,105 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# content_for :meta_title %>
+<%# content_for :meta_description %>
+<%# content_for :meta_image %>
+
+<!-- HEADER -->
+<div id="header" class="home">
+  <div class="container-fluid header-content">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <!-- HEADER CONTENT -->
+        <%= image_tag('logo_MMC_blanc.png', :class => 'header-logo') %>
+        <%= image_tag('wulfenite.png', :class => 'header-image') %>
+        <div class='header-text'>
+          <h1 class="header-title">maison de la minéralogie</h1>
+          <p class="header-subtitle">La planète cristalline révélée dans ses formes les plus créatives</p>
+          <!-- BOUCING ARROW -->
+          <a href="#presentation" rel="Go to the service presentation section">
+            <i><%= image_tag("icons/play.png", :class => 'play pulsed hidden-xs') %></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRESENTATION - MAISON DE LA MINERALOGIE -->
+<section class="container-fluid presentation" id="presentation">
+  <div class="container">
+    <div class="row">
+      <!-- BLOCK PORTE -->
+      <div class="col-md-5">
+        <%= image_tag('porte.png', :class => 'presentation-image') %>
+      </div>
+      <!-- BLOCK DESCRIPTION -->
+      <div class="col-md-6 col-md-offset-1 presentation-block">
+        <h3 class="subtitle">Pour une dynamique des patrimoines scientifique et culturel</h3>
+        <p>Ce projet est fondé sur l’une des plus belles collections minéralogiques privées de France, appartenant à Monsieur Freddy Marty, géologue retraité du Bureau de Recherches Géologiques et Minières, vivant à Chalabre.</p>
+        <p>Un Fonds de Dotation s’est constitué autour de cette collection pour mettre en œuvre, en partenariat avec la municipalité, une maison de la minéralogie à Chalabre.</p>
+        <p>La commune dispose d’un bâtiment historique, l’Hôtel Dieu Saint Jacques, de tous temps dédié à l’accueil et adapté pour ce projet dont elle assure la maîtrise d’ouvrage.</p>
+        <!-- CTA - EN SAVOIR PLUS -->
+         <!-- about_path -->
+        <%= button_to "En Savoir +", "#", method: :get, class: "button button-white button-hover-brown-lighter" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LE CONCEPT -->
+<section class="container-fluid concept">
+  <div class="container">
+    <div class="row">
+      <h2 class="section-title">Le concept</h2>
+      <div class="col-xs-12 concept-block">
+        <!-- COLLECTION -->
+        <div class="col-xs-12 col-sm-4">
+          <%=image_tag("icons/rock_collection.png") %>
+          <p>Exposition permanente des collections générales de la Maison de la Minéralogie de Chalabre</p>
+        </div>
+        <!-- EXPOSISTIONS -->
+        <div class="col-xs-12 col-sm-4">
+          <%=image_tag("icons/fossil.png") %>
+          <p>Expositions spécifiques, didactiques et temporaires</p>
+        </div>
+        <!-- THINK AROUND -->
+        <div class="col-xs-12 col-sm-4">
+          <%=image_tag("icons/think_bubble.png") %>
+          <p>Conférences, colloques, sessions d’études, séminaires ayant un rapport direct ou indirect avec la minéralogie</p>
+        </div>
+        <%= button_to "Découvrir", "#", method: :get, class: "button button-white button-hover-yellow-orange" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LA COLLECTION -->
+<section class="container-fluid collection">
+  <div class="container">
+    <div class="row">
+      <h2 class="section-title">La collection</h2>
+      <div class="col-xs-12">
+        <!-- SLICK SLIDER -->
+        <div class="container carrousel">
+          <% @minerals.each do |mineral| %>
+            <div class="col-xs-12 col-sm-3">
+              <div class="mineral-card">
+                <%= image_tag mineral.picture %>
+                <div class="box-shadow">
+                  <p class="mineral-name"><%= mineral.name %></p>
+                  <p class="mineral-size"><%= mineral.size %></p>
+                  <p class="mineral-origin"><%= mineral.origin %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :after_js do %>
+
+
+<% end %>
+

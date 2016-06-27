@@ -1,4 +1,472 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+// SECTION GENERAL
+.section-title {
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  color: $dark;
+  text-transform: uppercase;
+
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   margin: 0 auto;
+  //   padding-top: 30px;
+  //   width: 150px;
+  //   border-bottom: 3px solid $dark;
+  // }
+}
+
+.presentation,
+.concept,
+.collection {
+  position: relative;
+  text-align: center;
+  border-top: 1px $gray-lighter solid;
+}
+
+
+// SECTION - HEADER
+
+#header {
+  position: relative;
+  height: 600px;
+  background-color: $dark;
+
+  h1, p {
+    color: $white;
+  }
+
+  p {
+    text-transform: uppercase;
+  }
+
+  .header-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .header-image {
+    float: right;
+    max-width: 400px;
+    right: 2%;
+    margin-top: 10%;
+  }
+
+  .header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    .header-title {
+      font-size: 5.5rem;
+      @media only screen and (max-width:768px){ font-size: 4.5rem; }
+      @media only screen and (max-width:480px){ font-size: 4rem; }
+    }
+
+    .header-subtitle {
+      font-size: 2rem;
+      font-weight: 100;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+
+  a {
+    .play {
+      height: 60px;
+      margin-top: 100px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes pulsed {
+  // 0% {transform: scale(1);}
+  // 50% {transform: scale(1.1);}
+  // 100% {transform: scale(1);}
+  0% {opacity: 0.5;}
+  50% {opacity: 0.8;}
+  100% {opacity: 0.5;}
+}
+.pulsed {
+  animation-name: pulsed;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+
+// SECTION - PRÉSENTATION
+
+.presentation {
+  background-color: $brown-lighter;
+
+  .presentation-image {
+    position: absolute;
+    top: -115px;
+    left: 0;
+    max-height: 700px;
+  }
+
+  .presentation-block {
+    margin: 50px 0 80px 0;
+    color: $white;
+
+    .subtitle {
+      margin-bottom: 35px;
+    }
+  }
+
+}
+
+
+// SECTION - CONCEPT
+
+.concept {
+  background-color: $yellow-orange;
+   color: $white;
+
+  img { max-height: 100px; }
+  p, h3 { color: $dark; }
+  p { margin: 20px 0; }
+}
+
+.concept-block {
+  margin-bottom: 80px;
+}
+
+
+// SECTION - COLLECTION
+
+.collection {
+  background-color: $dark;
+
+  .section-title {
+    color: $white;
+  }
+
+  p {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .mineral-card {
+    position: relative;
+    margin-left: 24px;
+    width: 85%;
+    height: 220px;
+
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+
+    img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background-color: $dark;
+      @include transition(all 0.2s ease-in-out);
+    }
+
+    .box-shadow {
+      position: absolute;
+      height: 220px;
+      top: 190px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(15,15,15,0.7);
+
+     p {
+        color: $white;
+        font-size: 12px;
+        font-weight: 100;
+        line-height: 0.8em;
+
+        &.mineral-name {
+          font-size: 14px;
+          padding-top: 10px;
+        }
+
+        &.mineral-size {
+          font-size: 12px;
+          margin-top: 150px;
+        }
+
+        &.mineral-origin {
+          font-weight: 400;
+        }
+      }
+    }
+
+    &:hover{
+      .box-shadow {
+        background-color: rgba(15,15,15,0.5);
+        @include transform(translateY(-190px));
+        @include transition(all 0.5s ease-in-out);
+      }
+      p.mineral-name {
+        @include transform(translateY(10px));
+        @include transition(all 0.5s ease-in-out);
+      }
+      // img { @include transform(scale(1.1)); }
+    }
+  }
+
+  .carrousel {
+    margin-bottom: 80px !important;
+
+    .slick-list {
+      margin-bottom: 30px;
+    }
+
+    .slick-dots li button:before {
+      color: $white;
+    }
+  }
+}
+
+// // SECTION - SPONSORING //****************************************************//
+// //****************************************************************************//
+
+// .sponsoring {
+//   background-image: image-url("bg-sponsoring.jpg");
+//   background-size: counter-reset: ;
+//   background-position: center;
+//   position: relative;
+//   padding-bottom: 0;
+
+//   .overlay-sponsoring {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background-color: rgba(0,0,0,0.25);
+//   }
+
+//   .highlight {
+//     display: block;
+//     margin: 25px 0;
+//     color: $white;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//   }
+
+//   .sponsoring-content {
+//     text-align: left;
+//     margin-bottom: 75px;
+//     padding-right: 100px;
+//     @media only screen and (max-width:1024px){ padding-right: 40px; }
+//     @media only screen and (max-width:768px){ padding-right: 0; text-align: center; }
+//     @media only screen and (max-width:480px){ padding-left: 6px; padding-right: 6px; text-align: center; }
+
+//     a {
+//       margin-left: 0;
+//     }
+//   }
+
+//   h2, h3, p { color: $white; }
+
+//   h3 {
+//     margin-top: 28px;
+//     font-size: 14px;
+//     font-weight: 400;
+//   }
+
+//   p { padding-top: 20px; }
+//   img { float: left; }
+//   button { margin: 0; }
+
+//   .sponsoring-mockup {
+//     position: relative;
+//   }
+
+//   img {
+//     height: 420px;
+//     margin-top: 35px;
+//     margin-left: -24px;
+//     @media only screen and (max-width:1080px){ height: 280px; }
+//     @media only screen and (max-width:768px){ height: 260px; }
+//     @media only screen and (max-width:480px){ height: 228px; }
+//   }
+// }
+
+// // SECTION - ASSOCIATIONS //****************************************************//
+// //****************************************************************************//
+
+// .categories {
+//   background-color: $white-medium;
+
+//   ul {
+//     position: relative;
+//     padding: 50px 0;
+//     list-style: none;
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+
+//     li {
+//       width: 25%;
+//       margin: 20px 0;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       box-sizing: border-box;
+//     }
+//   }
+
+//   img {
+//     width: 164px;
+//     height: 164px;
+//     border-radius: 50%;
+//   }
+
+//   span {
+//     width: 80%;
+//     color: $white;
+//     background-color: #36d3da;
+//     padding: 10px 20px;
+//     margin-top: -30px;
+//     border-radius: 20px;
+//     font-size: 16px;
+//     transform: rotate(-5deg);
+//   }
+
+//   @media only screen and (max-width:1200px){
+//     ul {
+//       li {
+//          width: 33.33333%;
+//       }
+//     }
+//   }
+
+//   @media only screen and (max-width:760px){
+//     ul {
+//       li {
+//          width: 50%;
+//       }
+//     }
+//   }
+
+//   @media only screen and (max-width:520px){
+//     span { font-size: 12px; }
+//     p { padding: 0 20px; }
+//     ul { padding-bottom : 0; }
+//   }
+
+//   @media only screen and (max-width:320px){
+//     img {
+//       width: 120px;
+//       height: 120px;
+//     }
+//   }
+// }
+
+// // SECTION - ECOSYSTEM //****************************************************//
+// //****************************************************************************//
+
+// .ecosysteme {
+//   background-color: $white-lighter;
+
+//   h3, p { margin-bottom: 30px; }
+//   p { padding: 0 20px; }
+//   .button { margin-top: 30px; }
+//   .business, .association { padding: 0 15px; }
+
+//   @media only screen and (max-width:768px){
+//     p { margin-bottom: 0; }
+//   }
+// }
+
+// // SECTION - AMBASSADOR //****************************************************//
+// //****************************************************************************//
+
+// .ambassadors {
+//   position: relative;
+//   background:image-url('bg-ambassador.jpg') no-repeat center center;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+
+//   .overlay-ambassador {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background-color: rgba(30,49,50,0.73);
+//   }
+
+//   h2, h3, p, li { color: $white; }
+//   p { padding: 0 10px; }
+// }
+
+// // SECTION - SUPPORTERS //****************************************************//
+// //****************************************************************************//
+
+// .supporters {
+//   background-color: $gray-darker;
+
+//   h2 {
+//     display: flex;
+//     align-items: center;
+//     -webkit-margin-before: 0px !important;
+//     -webkit-margin-after: 0px !important;
+//     -webkit-margin-start: 0px;
+//     -webkit-margin-end: 0px;
+//     color: $white;
+
+//     &::before,
+//     &::after {
+//       padding-top: 0;
+//       margin: 0 20px;
+//       content: "";
+//       border-bottom: solid #fff 1px;
+//       flex: 1;
+//     }
+//   }
+
+//   .row-logo { margin: 20px 0; }
+
+//   img {
+//     padding: 0 20px;
+//     margin: 5px;
+//     height: 75px;
+//     height: 50px;
+//   }
+// }
+
+// // SECTION - CTA REGISTRATION //**********************************************//
+// //****************************************************************************//
+// .registration {
+//   position: relative;
+//   background-image: image-url("cover-cforgood-legal.jpg");
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   background-position: bottom;
+
+//   .overlay-registration {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background-color: rgba(30,49,50,0.3);
+//   }
+
+//   h3 {
+//     color: $white;
+//     margin-bottom: 40px;
+//   }
+// }
