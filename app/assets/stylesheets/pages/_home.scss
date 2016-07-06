@@ -48,9 +48,15 @@
 
   .header-image {
     float: right;
-    max-width: 400px;
     right: 2%;
     margin-top: 10%;
+    max-width: 400px;
+
+    @media only screen and (max-width:435px){
+      float: none;
+      margin-top: 49%;
+      max-width: 290px;
+    }
   }
 
   .header-text {
@@ -71,6 +77,7 @@
       font-weight: 100;
       padding-left: 6px;
       padding-right: 6px;
+      margin: 10px;
     }
   }
 
@@ -111,6 +118,7 @@
     top: -115px;
     left: 0;
     max-height: 700px;
+    max-width: 85%;
   }
 
   .presentation-block {
@@ -169,10 +177,12 @@
 
     img {
       position: relative;
-      height: 100%;
-      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-height: 100%;
+      max-width: 100%;
       background-color: $dark;
-      @include transition(all 0.2s ease-in-out);
+      // @include transition(all 0.2s ease-in-out);
     }
 
     .box-shadow {
@@ -183,6 +193,7 @@
       left: 0;
       right: 0;
       background-color: rgba(15,15,15,0.7);
+      @include transition(all 0.5s ease-in-out);
 
      p {
         color: $white;
@@ -197,7 +208,7 @@
 
         &.mineral-size {
           font-size: 12px;
-          margin-top: 150px;
+          margin-top: 20px;
         }
 
         &.mineral-origin {
@@ -209,18 +220,14 @@
     &:hover{
       .box-shadow {
         background-color: rgba(15,15,15,0.5);
-        @include transform(translateY(-190px));
-        @include transition(all 0.5s ease-in-out);
-      }
-      p.mineral-name {
-        @include transform(translateY(10px));
-        @include transition(all 0.5s ease-in-out);
+        @include transform(translateY(-60px));
       }
       // img { @include transform(scale(1.1)); }
     }
   }
 
   .carrousel {
+    max-width: 100%;
     margin-bottom: 80px !important;
 
     .slick-list {
