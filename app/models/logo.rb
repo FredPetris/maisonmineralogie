@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: minerals
+# Table name: logos
 #
 #  id         :integer          not null, primary key
+#  position   :integer
 #  name       :string
 #  picture    :string
-#  size       :string
-#  origin     :string
+#  link       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Mineral < ActiveRecord::Base
+class Logo < ApplicationRecord
 end

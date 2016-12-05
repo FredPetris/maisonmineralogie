@@ -1,0 +1,66 @@
+.newsletter {
+
+  #mc_embed_signup {
+    position: relative;
+    width: 100%;
+
+    #mc_embed_signup_scroll {
+      position: absolute;
+      display: flex;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 25px;
+
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+
+      input[type=email] {
+        padding-left: 10px;
+        width: 290px;
+        height: 37px;
+        border: none;
+        border-radius: 3px 0 0 3px;
+        box-shadow: none;
+        background: $white;
+        color: $black;
+
+        @media (max-width: 375px) {
+          min-width: 100%;
+          box-sizing: border-box;
+          border-radius: 3px 0;
+        }
+      }
+
+      input[type="submit"] {
+        appearance: none;
+        padding: 8px 20px;
+        height: 37px;
+        border: 1px solid $white;
+        background-color: transparent;
+        border-radius: 0 3px 3px 0;
+        box-shadow: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $white;
+        outline: none;
+
+        &:hover {
+          background-color: $white;
+          color: $black;
+          border-left: 1px solid $dark;
+        }
+
+        @media (max-width: 992px) {
+          position: relative;
+          min-width: 290px;
+          border-radius: 0 0 3px 3px;
+        }
+
+        @media (max-width: 375px) {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}

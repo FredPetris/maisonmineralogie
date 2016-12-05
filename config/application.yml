@@ -1,0 +1,13 @@
+MAILCHIMP_API_KEY: "ace0deb0d5a45f9f0d2ca45dd2f6a8ab-us12"
+MAILCHIMP_LIST_NEWSLETTER: "fb02961dd8"
+
+development:
+  ASSET_HOST: "http://localhost:3000"
+
+staging:
+  HOST: "https://maisonmineralogie-staging.herokuapp.com"
+
+
+production:
+  HOST: "https://maisonmineralogie-production.herokuapp.com"
+

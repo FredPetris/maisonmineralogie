@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby "2.3.1"
 
-gem 'rails', '4.2.4'
+gem 'rails', '~> 5.0.0.beta1'
 gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
@@ -18,6 +18,7 @@ gem 'underscore-rails'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-slick-rails'
+gem 'gibbon'
 
 
 group :development, :test do

@@ -8,14 +8,29 @@
     <div class="row">
       <div class="col-xs-12 text-center">
         <!-- HEADER CONTENT -->
-        <%= image_tag('logo_MMC_blanc.png', :class => 'header-logo') %>
-        <%= image_tag('wulfenite.png', :class => 'header-image') %>
+        <%= image_tag 'logos/logo_MMC_blanc.png', class: 'header-logo' %>
+        <% theme = randomized_background %>
+        <%= image_tag theme[:picture], class: 'header-image' %>
         <div class='header-text'>
           <h1 class="header-title">maison de la minéralogie</h1>
           <p class="header-subtitle">La planète cristalline révélée dans ses formes les plus créatives</p>
+          <!-- Begin MailChimp Signup Form -->
+          <div class="newsletter">
+            <div id="mc_embed_signup">
+              <form action="//ladidi.us12.list-manage.com/subscribe/post?u=3183624c9105f81502ca2a626&amp;id=fb02961dd8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <div class="mc-field-group">
+                    <input type="email" placeholder="Votre email" name="EMAIL" class="required email" id="mce-EMAIL">
+                  </div>
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7f659a3a9f99613ccc2cc33db_33859b0a30" tabindex="-1" value=""></div>
+                  <div class="clear"><input type="submit" value="S'inscrire" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+              </form>
+            </div>
+          </div>
           <!-- BOUCING ARROW -->
           <a href="#presentation" rel="Go to the service presentation section">
-            <i><%= image_tag("icons/play.png", :class => 'play pulsed hidden-xs') %></i>
+            <i><%= image_tag "icons/play.png", :class => 'play pulsed hidden-xs' %></i>
           </a>
         </div>
       </div>
@@ -24,12 +39,12 @@
 </div>
 
 <!-- PRESENTATION - MAISON DE LA MINERALOGIE -->
-<section class="container-fluid presentation" id="presentation">
+<section class="section-presentation" id="presentation">
   <div class="container">
     <div class="row">
       <!-- BLOCK PORTE -->
       <div class="col-md-5">
-        <%= image_tag('porte.png', :class => 'presentation-image') %>
+        <%= image_tag 'backgrounds/porte.png', :class => 'presentation-image' %>
       </div>
       <!-- BLOCK DESCRIPTION -->
       <div class="col-md-6 col-md-offset-1 presentation-block">
@@ -46,37 +61,37 @@
 </section>
 
 <!-- LE CONCEPT -->
-<section class="container-fluid concept">
+<section class="section-concept <%= theme[:color] %>">
   <div class="container">
+    <h2 class="section-title">Le concept</h2>
     <div class="row">
-      <h2 class="section-title">Le concept</h2>
       <div class="col-xs-12 concept-block">
         <!-- COLLECTION -->
         <div class="col-xs-12 col-sm-4">
-          <%=image_tag("icons/rock_collection.png") %>
+          <%=image_tag "icons/rock_collection.png" %>
           <p>Exposition permanente des collections générales de la Maison de la Minéralogie de Chalabre</p>
         </div>
         <!-- EXPOSISTIONS -->
         <div class="col-xs-12 col-sm-4">
-          <%=image_tag("icons/fossil.png") %>
+          <%=image_tag "icons/fossil.png" %>
           <p>Expositions spécifiques, didactiques et temporaires</p>
         </div>
         <!-- THINK AROUND -->
         <div class="col-xs-12 col-sm-4">
-          <%=image_tag("icons/think_bubble.png") %>
+          <%=image_tag "icons/think_bubble.png" %>
           <p>Conférences, colloques, sessions d’études, séminaires ayant un rapport direct ou indirect avec la minéralogie</p>
         </div>
-        <%= button_to "Découvrir", "#", method: :get, class: "button button-white button-hover-yellow-orange" %>
+        <%= button_to "Découvrir", "#", method: :get, class: "button button-white button-hover-#{theme[:color]}" %>
       </div>
     </div>
   </div>
 </section>
 
 <!-- LA COLLECTION -->
-<section class="container-fluid collection">
+<section class="section-collection">
   <div class="container">
+    <h2 class="section-title">La collection</h2>
     <div class="row">
-      <h2 class="section-title">La collection</h2>
       <div class="col-xs-12">
         <!-- SLICK SLIDER -->
         <div class="container carrousel">
@@ -98,8 +113,41 @@
   </div>
 </section>
 
-<% content_for :after_js do %>
+<!-- NOTRE ACTUALITE -->
+<section class="section-articles">
+  <div class="container">
+    <h2 class="section-title">Notre actualité</h2>
+    <div class="row articles-block">
+      <% @articles.each do |article| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="article-card">
+            <h3><%= article.title %></h3>
+            <p class="article-date"><%= article.created_at %></p>
+            <div class="article-picture">
+              <%= image_tag article.picture if article.picture %>
+            </div>
+            <p class="article-text"><%= article.text %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
 
-
-<% end %>
-
+<!-- LOGOS -->
+<section class="section-logos">
+  <div class="container">
+    <h2 class="section-title">Ils nous soutiennent !</h2>
+    <div class="row">
+      <% @logos.in_groups_of(6) do |logos_group| %>
+        <div class="logos">
+          <% logos_group.each do |logo| %>
+            <% if logo %>
+              <%= link_to (image_tag logo.picture), logo.link, target: "_blank" %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

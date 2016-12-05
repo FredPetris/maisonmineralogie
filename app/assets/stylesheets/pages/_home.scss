@@ -1,29 +1,23 @@
 // SECTION GENERAL
+
+.section-presentation,
+.section-concept,
+.section-collection,
+.section-articles,
+.section-logos {
+  position: relative;
+  text-align: center;
+  border-top: 1px $gray-lighter solid;
+}
+
 .section-title {
   position: relative;
   margin-top: 80px;
   margin-bottom: 50px;
   color: $dark;
   text-transform: uppercase;
-
-  // &:after {
-  //   content: '';
-  //   display: block;
-  //   margin: 0 auto;
-  //   padding-top: 30px;
-  //   width: 150px;
-  //   border-bottom: 3px solid $dark;
-  // }
+  font-size: 30px;
 }
-
-.presentation,
-.concept,
-.collection {
-  position: relative;
-  text-align: center;
-  border-top: 1px $gray-lighter solid;
-}
-
 
 // SECTION - HEADER
 
@@ -61,10 +55,12 @@
 
   .header-text {
     position: absolute;
-    top: 50%;
+    width: 100%;
+    padding: 0 20px;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    z-index: 5;
 
     .header-title {
       font-size: 5.5rem;
@@ -73,23 +69,15 @@
     }
 
     .header-subtitle {
+      margin: 1em 0 2em;
       font-size: 2rem;
       font-weight: 100;
-      padding-left: 6px;
-      padding-right: 6px;
-      margin: 10px;
     }
   }
 
-  a {
-    .play {
-      height: 60px;
-      margin-top: 100px;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
+  a .play {
+    height: 60px;
+    transform: translateY(150px);
   }
 }
 
@@ -101,16 +89,16 @@
   50% {opacity: 0.8;}
   100% {opacity: 0.5;}
 }
+
 .pulsed {
   animation-name: pulsed;
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
 
-
 // SECTION - PRÉSENTATION
 
-.presentation {
+.section-presentation {
   background-color: $brown-lighter;
 
   .presentation-image {
@@ -132,26 +120,27 @@
 
 }
 
-
 // SECTION - CONCEPT
 
-.concept {
-  background-color: $yellow-orange;
-   color: $white;
+.section-concept {
+  color: $white;
 
   img { max-height: 100px; }
   p, h3 { color: $dark; }
   p { margin: 20px 0; }
+
+  &.background-yellow { background-color: $yellow-orange; }
+  &.background-turquoise { background-color: $turquoise; }
+  &.background-green { background-color: $green-green; }
 }
 
 .concept-block {
   margin-bottom: 80px;
 }
 
-
 // SECTION - COLLECTION
 
-.collection {
+.section-collection {
   background-color: $dark;
 
   .section-title {
@@ -161,6 +150,10 @@
   p {
     padding-left: 6px;
     padding-right: 6px;
+  }
+
+  .row {
+    margin: 0;
   }
 
   .mineral-card {
@@ -240,240 +233,112 @@
   }
 }
 
-// // SECTION - SPONSORING //****************************************************//
-// //****************************************************************************//
+// SECTION - ARTICLES
 
-// .sponsoring {
-//   background-image: image-url("bg-sponsoring.jpg");
-//   background-size: counter-reset: ;
-//   background-position: center;
-//   position: relative;
-//   padding-bottom: 0;
+.section-articles {
+  color: $white-lighter;
 
-//   .overlay-sponsoring {
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     background-color: rgba(0,0,0,0.25);
-//   }
+  h2 {
+    color: $orange
+  }
 
-//   .highlight {
-//     display: block;
-//     margin: 25px 0;
-//     color: $white;
-//     font-weight: 500;
-//     text-transform: uppercase;
-//   }
+  .articles-block {
+    margin-bottom: 80px;
+    color: $dark;
+  }
 
-//   .sponsoring-content {
-//     text-align: left;
-//     margin-bottom: 75px;
-//     padding-right: 100px;
-//     @media only screen and (max-width:1024px){ padding-right: 40px; }
-//     @media only screen and (max-width:768px){ padding-right: 0; text-align: center; }
-//     @media only screen and (max-width:480px){ padding-left: 6px; padding-right: 6px; text-align: center; }
+  .article-card {
+    position: relative;
+    display: flex;
+    flex-direction: colunm;
+    height: 400px;
+    width: 275px;
+    margin-bottom: 40px;
+    background: $white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
 
-//     a {
-//       margin-left: 0;
-//     }
-//   }
+  h3 {
+    position: absolute;
+    padding: 3px 10px;
+    margin-top: 7px;
+    font-style: 14px;
+    text-align: left;
 
-//   h2, h3, p { color: $white; }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      top: 36px;
+      left: 10px;
+      background-color: $orange;
+    }
+  }
 
-//   h3 {
-//     margin-top: 28px;
-//     font-size: 14px;
-//     font-weight: 400;
-//   }
+  .article-picture {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 5px;
+    right: 5px;
+    background-color: $orange;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border: $white 1px solid;
+  }
 
-//   p { padding-top: 20px; }
-//   img { float: left; }
-//   button { margin: 0; }
+  .article-date {
+    position: absolute;
+    display: flex;
+    top: 50px;
+    padding: 0 10px;
+  }
 
-//   .sponsoring-mockup {
-//     position: relative;
-//   }
+  .article-text {
+    position: absolute;
+    display: flex;
+    top: 100px;
+    padding: 0 10px;
+  }
+}
 
-//   img {
-//     height: 420px;
-//     margin-top: 35px;
-//     margin-left: -24px;
-//     @media only screen and (max-width:1080px){ height: 280px; }
-//     @media only screen and (max-width:768px){ height: 260px; }
-//     @media only screen and (max-width:480px){ height: 228px; }
-//   }
-// }
+// SECTION - ARTICLES
 
-// // SECTION - ASSOCIATIONS //****************************************************//
-// //****************************************************************************//
+.section-logos {
+  background-color: $gray-darker;
 
-// .categories {
-//   background-color: $white-medium;
+  h2 {
+    color: $white;
+  }
 
-//   ul {
-//     position: relative;
-//     padding: 50px 0;
-//     list-style: none;
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px auto;
+    width: 100%;
+    min-height: 150px;
 
-//     li {
-//       width: 25%;
-//       margin: 20px 0;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       box-sizing: border-box;
-//     }
-//   }
+    .logos {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 55px;
+      width: 100%;
 
-//   img {
-//     width: 164px;
-//     height: 164px;
-//     border-radius: 50%;
-//   }
+      img {
+        width: 80%;
 
-//   span {
-//     width: 80%;
-//     color: $white;
-//     background-color: #36d3da;
-//     padding: 10px 20px;
-//     margin-top: -30px;
-//     border-radius: 20px;
-//     font-size: 16px;
-//     transform: rotate(-5deg);
-//   }
+        @media (max-width: 320px) {
+          width: 50%;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
 
-//   @media only screen and (max-width:1200px){
-//     ul {
-//       li {
-//          width: 33.33333%;
-//       }
-//     }
-//   }
-
-//   @media only screen and (max-width:760px){
-//     ul {
-//       li {
-//          width: 50%;
-//       }
-//     }
-//   }
-
-//   @media only screen and (max-width:520px){
-//     span { font-size: 12px; }
-//     p { padding: 0 20px; }
-//     ul { padding-bottom : 0; }
-//   }
-
-//   @media only screen and (max-width:320px){
-//     img {
-//       width: 120px;
-//       height: 120px;
-//     }
-//   }
-// }
-
-// // SECTION - ECOSYSTEM //****************************************************//
-// //****************************************************************************//
-
-// .ecosysteme {
-//   background-color: $white-lighter;
-
-//   h3, p { margin-bottom: 30px; }
-//   p { padding: 0 20px; }
-//   .button { margin-top: 30px; }
-//   .business, .association { padding: 0 15px; }
-
-//   @media only screen and (max-width:768px){
-//     p { margin-bottom: 0; }
-//   }
-// }
-
-// // SECTION - AMBASSADOR //****************************************************//
-// //****************************************************************************//
-
-// .ambassadors {
-//   position: relative;
-//   background:image-url('bg-ambassador.jpg') no-repeat center center;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-
-//   .overlay-ambassador {
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     background-color: rgba(30,49,50,0.73);
-//   }
-
-//   h2, h3, p, li { color: $white; }
-//   p { padding: 0 10px; }
-// }
-
-// // SECTION - SUPPORTERS //****************************************************//
-// //****************************************************************************//
-
-// .supporters {
-//   background-color: $gray-darker;
-
-//   h2 {
-//     display: flex;
-//     align-items: center;
-//     -webkit-margin-before: 0px !important;
-//     -webkit-margin-after: 0px !important;
-//     -webkit-margin-start: 0px;
-//     -webkit-margin-end: 0px;
-//     color: $white;
-
-//     &::before,
-//     &::after {
-//       padding-top: 0;
-//       margin: 0 20px;
-//       content: "";
-//       border-bottom: solid #fff 1px;
-//       flex: 1;
-//     }
-//   }
-
-//   .row-logo { margin: 20px 0; }
-
-//   img {
-//     padding: 0 20px;
-//     margin: 5px;
-//     height: 75px;
-//     height: 50px;
-//   }
-// }
-
-// // SECTION - CTA REGISTRATION //**********************************************//
-// //****************************************************************************//
-// .registration {
-//   position: relative;
-//   background-image: image-url("cover-cforgood-legal.jpg");
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-//   background-position: bottom;
-
-//   .overlay-registration {
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     background-color: rgba(30,49,50,0.3);
-//   }
-
-//   h3 {
-//     color: $white;
-//     margin-bottom: 40px;
-//   }
-// }

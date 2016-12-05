@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: minerals
+# Table name: news
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  title      :string
+#  author     :string
+#  text       :text
+#  link       :string
 #  picture    :string
-#  size       :string
-#  origin     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Mineral < ActiveRecord::Base
+class Article < ApplicationRecord
 end

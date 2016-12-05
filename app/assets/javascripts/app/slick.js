@@ -5,7 +5,7 @@ $('.carrousel').slick({
   autoplay: true,
   speed: 1500,
   slidesToShow: 4,
-  slidesToScroll: 1,
+  slidesToScroll: 4,
   responsive: [
     {
       breakpoint: 1024,
