@@ -12,68 +12,85 @@ footer {
   .footer-content {
     position: relative;
     margin-bottom: 40px;
-    z-index: 30;
 
-    .footer-logo {
-      padding: 0 0.75rem;
-      margin-bottom: 25px;
+  //   .footer-logo {
+  //     padding: 0 0.75rem;
+  //     margin-bottom: 25px;
 
-      @media (max-width: 992px) {
-        padding: 0 5.30rem;
-      }
-    }
+  //     @media (max-width: 992px) {
+  //       padding: 0 5.30rem;
+  //     }
+  //   }
 
-    ul {
+  //   .footer-block {
+  //     display: flex;
 
-      @media (min-width: 993px) {
-        padding-left: 0;
-      }
-
-      li {
-        display: inline-block;
-        font-size: 14px;
-        text-transform: uppercase;
-        padding: 0 15px;
+      ul {
 
         @media (min-width: 993px) {
-          padding-left: 8px;
+          padding-left: 0;
         }
 
-        @media (max-width: 992px) {
-          display: block;
-        }
+        li {
+          font-size: 14px;
+          text-transform: uppercase;
+          padding: 0 15px 5px 15px;
 
-        a {
-          color: white;
-        }
-      }
+          @media (min-width: 993px) {
+            padding-left: 8px;
+          }
 
-      li:not(:last-child) {
-        border-right: 1px solid white;
-        @media (max-width: 992px) {
-          border: none;
-        }
-      }
+          @media (max-width: 992px) {
+            display: block;
+          }
 
-      li:not(:last-child) {
-        margin-bottom: 10px;
+          a {
+            color: white;
+            text-decoration: none;
+          }
+        }
       }
     }
+  //       // li:not(:last-child) {
+  //       //   border-right: 1px solid white;
+  //       //   @media (max-width: 992px) {
+  //       //     border: none;
+  //       //   }
+  //       // }
 
-    .newsletter {
-      display: flex;
-      flex-wrap: wrap;
-      padding-top: 13px;
-      width: 66.66666%;
+  //       // li:not(:last-child) {
+  //       //   margin-bottom: 10px;
+  //       // }
+  //     }
 
-      @media (max-width: 992px) {
-        width: 50%;
+      .footer-newsletter {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          @media (min-width: 993px) {
+            margin-left: -15px;
+          }
+        }
+
+        .newletter {
+          max-width: 400px;
+
+          #mc_embed_signup {
+            margin-top: -30px;
+          }
+        }
+
+
+  //       @media (max-width: 992px) {
+  //         width: 50%;
+  //       }
+
+  //       @media (max-width: 767px) {
+  //         padding-top: 0;
+  //         width: 100%;
+  //       }
       }
-
-      @media (max-width: 767px) {
-        padding-top: 0;
-        width: 100%;
-      }
-    }
-  }
+  //   }
+  // }
 }

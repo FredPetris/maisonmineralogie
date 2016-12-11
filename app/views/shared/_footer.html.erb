@@ -1,15 +1,25 @@
 <footer>
   <div class="container footer-content">
     <div class="row">
-       <%= image_tag 'logos/logo_MMC_blanc.png', class: 'footer-logo' %>
-    </div>
-    <div class="row">
-      <ul class="footer">
-        <li><%= link_to "Le projet", root_path %></li>
-        <li><%= link_to "Les acteurs", root_path %></li>
-        <li><%= link_to "Nous soutenir", root_path %></li>
-        <li><%= link_to "Nous contacter", contact_path %></li>
-      </ul>
+      <div class="col-xs-12 col-md-2 footer-logo">
+        <%= image_tag 'logos/logo_MMC_blanc.png' %>
+      </div>
+      <div class="col-xs-12 col-md-2 footer-project">
+        <ul>
+          <li><%= link_to "Le projet", root_path %></li>
+          <li><%= link_to "Les acteurs", root_path %></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-3 footer-corporate">
+        <ul>
+          <li><%= link_to "Nous soutenir", root_path %></li>
+          <li><%= link_to "Nous contacter", contact_path %></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-5 footer-newsletter">
+        <p>Inscrivez-vous à la newsletter</p>
+        <%= render "shared/newsletter" %>
+      </div>
     </div>
   </div>
 </footer>
