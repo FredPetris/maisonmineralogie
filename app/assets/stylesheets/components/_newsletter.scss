@@ -19,16 +19,16 @@
         padding-left: 10px;
         width: 290px;
         height: 37px;
+        font-weight: 100;
         border: none;
-        border-radius: 3px 0 0 3px;
+        border-radius: 2px 0 0 2px;
         box-shadow: none;
         background: $white;
         color: $black;
 
         @media (max-width: 992px) {
-          border-radius: 3px 3px 0 0;
+          border-radius: 2px 2px 0 0;
         }
-
 
         @media (max-width: 375px) {
           min-width: 100%;

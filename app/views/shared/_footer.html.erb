@@ -1,10 +1,10 @@
 <footer>
   <div class="container footer-content">
     <div class="row">
-      <div class="col-xs-12 col-md-3 col-sm-3 footer-logo">
+      <div class="col-xs-4 col-sm-2 footer-logo">
         <%= image_tag 'logos/logo_MMC_blanc.png' %>
       </div>
-      <div class="col-xs-12 col-md-3 col-sm-3 footer-project">
+      <div class="col-xs-8 col-sm-4 footer-project">
         <ul>
           <li><%= link_to "Le projet", root_path %></li>
           <li><%= link_to "Les acteurs", root_path %></li>
@@ -12,12 +12,7 @@
           <li><%= link_to "Nous contacter", contact_path %></li>
         </ul>
       </div>
-<!--       <div class="col-xs-12 col-md-2 col-sm-3 footer-corporate">
-        <ul>
-
-        </ul>
-      </div> -->
-      <div class="col-xs-12 col-md-6 col-sm-6 footer-newsletter">
+      <div class="col-xs-12 col-sm-6 footer-newsletter">
         <p>Inscrivez-vous à la newsletter</p>
         <%= render "shared/newsletter" %>
       </div>

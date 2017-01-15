@@ -40,6 +40,21 @@
     left: 20px;
   }
 
+  .header-map {
+    position: absolute;
+    top: 20px;
+    left: 9px;
+    width: 100px;
+    display: flex;
+  }
+
+  .header-tampon {
+    position: absolute;
+    width: 165px;
+    right: 0;
+    opacity: 0.4;
+  }
+
   .header-image {
     float: right;
     right: 2%;
@@ -103,10 +118,26 @@
 
   .presentation-image {
     position: absolute;
-    top: -115px;
+    top: -75px;
     left: 0;
     max-height: 700px;
     max-width: 85%;
+
+    @media only screen and (max-width:375px) {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(30%);
+    }
+
+    @media only screen and (max-width:375px) {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(30%);
+    }
+
+    @media only screen and (max-width:321px) {
+      transform: translateX(-50%) translateY(40%);
+    }
   }
 
   .presentation-block {
@@ -117,7 +148,6 @@
       margin-bottom: 35px;
     }
   }
-
 }
 
 // SECTION - CONCEPT

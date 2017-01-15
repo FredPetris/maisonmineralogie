@@ -9,6 +9,8 @@
       <div class="col-xs-12 text-center">
         <!-- HEADER CONTENT -->
         <%= image_tag 'logos/logo_MMC_blanc.png', class: 'header-logo' %>
+        <%= image_tag 'illustrations/carte_france_contour.svg', class: 'header-map' %>
+        <%= image_tag 'illustrations/tampon.svg', class: 'header-tampon' %>
         <% theme = randomized_background %>
         <%= image_tag theme[:picture], class: 'header-image' %>
         <div class='header-text'>
@@ -28,7 +30,7 @@
 
 <!-- PRESENTATION - MAISON DE LA MINERALOGIE -->
 <section class="section-presentation" id="presentation">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <!-- BLOCK PORTE -->
       <div class="col-md-5">
