@@ -6,3 +6,36 @@ body {
 ul {
  list-style-type: none;
 }
+
+.pastille {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: $dark;
+  justify-content: center;
+
+  img {
+    padding-top: 11px;
+  }
+
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+
+    img {
+      padding-top: 5px;
+    }
+  }
+}
+
+.title {
+  font-size: 24px;
+}
+
+.sub-title {
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+}

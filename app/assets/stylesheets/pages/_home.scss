@@ -36,8 +36,9 @@
 
   .header-logo {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    width: 110px;
+    top: 12px;
+    left: 10px;
   }
 
   .header-map {
@@ -126,13 +127,7 @@
     @media only screen and (max-width:375px) {
       top: 0;
       left: 50%;
-      transform: translateX(-50%) translateY(30%);
-    }
-
-    @media only screen and (max-width:375px) {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%) translateY(30%);
+      transform: translateX(-50%) translateY(15%);
     }
 
     @media only screen and (max-width:321px) {
