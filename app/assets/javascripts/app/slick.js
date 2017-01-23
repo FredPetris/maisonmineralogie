@@ -1,4 +1,4 @@
-$('.carrousel').slick({
+$('.carousel').slick({
   dots: true,
   arrows: true,
   infinite: false,
@@ -34,5 +34,14 @@ $('.carrousel').slick({
     // settings: "unslick"
     // instead of a settings object
   ]
+});
+
+$('.door-carousel').slick({
+  arrows: false,
+  infinite: true,
+  autoplay: true,
+  speed: 1000,
+  centerMode: true,
+  fade: true
 });
 

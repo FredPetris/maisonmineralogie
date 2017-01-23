@@ -53,7 +53,7 @@
     position: absolute;
     width: 165px;
     right: 0;
-    opacity: 0.4;
+    opacity: 0.6;
   }
 
   .header-image {
@@ -62,7 +62,7 @@
     margin-top: 10%;
     max-width: 400px;
 
-    @media only screen and (max-width:435px){
+    @media (max-width:435px){
       float: none;
       margin-top: 49%;
       max-width: 290px;
@@ -78,10 +78,12 @@
     transform: translateX(-50%);
     z-index: 5;
 
+    @media (max-width:768px){ top: 45%; }
+
     .header-title {
       font-size: 5.5rem;
-      @media only screen and (max-width:768px){ font-size: 4.5rem; }
-      @media only screen and (max-width:480px){ font-size: 4rem; }
+      @media (max-width:768px){ font-size: 4.5rem; }
+      @media (max-width:480px){ font-size: 4rem; }
     }
 
     .header-subtitle {
@@ -98,9 +100,6 @@
 }
 
 @keyframes pulsed {
-  // 0% {transform: scale(1);}
-  // 50% {transform: scale(1.1);}
-  // 100% {transform: scale(1);}
   0% {opacity: 0.5;}
   50% {opacity: 0.8;}
   100% {opacity: 0.5;}
@@ -116,31 +115,68 @@
 
 .section-presentation {
   background-color: $brown-lighter;
+  display: flex;
 
   .presentation-image {
-    position: absolute;
-    top: -75px;
+    display: flex;
+    bottom: -15px;
     left: 0;
-    max-height: 700px;
-    max-width: 85%;
+    height: 120%;
+    width: 40%;
 
-    @media only screen and (max-width:375px) {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%) translateY(15%);
-    }
-
-    @media only screen and (max-width:321px) {
-      transform: translateX(-50%) translateY(40%);
+    .front-door {
+      max-height: 530px;
+      max-width: 100%;
     }
   }
 
   .presentation-block {
-    margin: 50px 0 80px 0;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    right: 0;
+    padding: 30px;
     color: $white;
 
     .subtitle {
       margin-bottom: 35px;
+    }
+  }
+}
+
+.door-carousel {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 35%;
+}
+
+.mineral-card {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  img {
+    position: relative;
+    max-height: 70%;
+    max-width: 70%;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 991px) {
+  .section-presentation {
+    flex-direction: column;
+
+    .presentation-image, .presentation-block {
+      width: 100%;
+      justify-content: center;
     }
   }
 }
@@ -244,7 +280,7 @@
     }
   }
 
-  .carrousel {
+  .carousel {
     max-width: 100%;
     margin-bottom: 80px !important;
 

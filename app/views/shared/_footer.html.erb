@@ -8,7 +8,9 @@
         <ul>
           <li><%= link_to "Le projet", root_path %></li>
           <li><%= link_to "Les acteurs", root_path %></li>
-          <li><%= link_to "Nous soutenir", root_path %></li>
+          <li>
+            <a href="<%= ENV['ASSET_HOST'] %>/Bulletin-de-souscription-MMC.pdf", target="_blank">Nous soutenir</a>
+          </li>
           <li><%= link_to "Nous contacter", contact_path %></li>
         </ul>
       </div>
