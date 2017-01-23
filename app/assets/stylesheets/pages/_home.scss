@@ -146,9 +146,9 @@
 
 .door-carousel {
   position: absolute;
-  width: 60%;
+  width: 40%;
   height: 60%;
-  top: 35%;
+  bottom: 200px;
 }
 
 .mineral-card {
@@ -177,6 +177,10 @@
     .presentation-image, .presentation-block {
       width: 100%;
       justify-content: center;
+    }
+
+    .door-carousel {
+      width: 60%
     }
   }
 }

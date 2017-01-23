@@ -42,6 +42,7 @@ $('.door-carousel').slick({
   autoplay: true,
   speed: 1000,
   centerMode: true,
+  slidesToShow: 1,
   fade: true
 });
 
