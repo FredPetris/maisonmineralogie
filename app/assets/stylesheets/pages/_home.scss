@@ -317,7 +317,9 @@
 // SECTION - ARTICLES
 
 .section-articles {
-  color: $white-lighter;
+  background: $white-lighter;
+  color: $dark;
+  padding-bottom: 60px;
 
   h2 {
     color: $orange
@@ -383,9 +385,54 @@
     top: 100px;
     padding: 0 10px;
   }
+
+  ul.timeline {
+    padding: 0;
+    margin-left: 135px;
+    padding-top: 20px;
+
+    li {
+      list-style-type: none;
+      padding: 1em;
+      margin: 0;
+      transition: background-color 0.5s;
+      overflow: visible;
+      border-left: 1px solid $white;
+    }
+
+    li .timeline-date {
+        display: inline-block;
+        float: left;
+        margin-left: -100px;
+        max-width: 55px;
+        font-size: 13px;
+        font-weight: 600px;
+        text-transform: uppercase;
+    }
+
+    li .timeline-icon {
+        display: inline-block;
+        float: left;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border: 2px solid $white;
+        border-radius: 50%;
+        margin-left: -27px;
+        background: $white;
+    }
+
+    li .timeline-content {
+        text-align: left;
+        background: $white;
+        margin-left: 15px;
+        padding: 10px;
+        font-size: 14px;
+    }
+  }
 }
 
-// SECTION - ARTICLES
+// SECTION - LOGOS
 
 .section-logos {
   background-color: $gray-darker;

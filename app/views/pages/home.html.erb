@@ -17,7 +17,7 @@
           <h1 class="header-title">maison de la minéralogie</h1>
           <p class="header-subtitle">La planète cristalline révélée dans ses formes les plus créatives</p>
           <!-- Begin MailChimp Signup Form -->
-          <%= render "shared/newsletter" %>
+          <!-- <%#= render "shared/newsletter" %> -->
           <!-- BOUCING ARROW -->
           <a href="#presentation" rel="Go to the service presentation section">
             <i><%= image_tag "icons/play.png", :class => 'play pulsed hidden-xs' %></i>
@@ -114,20 +114,65 @@
 <section class="section-articles">
   <div class="container">
     <h2 class="section-title">Notre actualité</h2>
-    <div class="row articles-block">
-      <% @articles.each do |article| %>
+    <!-- <div class="row articles-block">
+      <%# @articles.each do |article| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="article-card">
-            <h3><%= article.title %></h3>
-            <p class="article-date"><%= article.created_at %></p>
+            <h3><%#= article.title %></h3>
+            <p class="article-date"><%#= article.created_at %></p>
             <div class="article-picture">
-              <%= image_tag article.picture if article.picture %>
+              <%#= image_tag article.picture if article.picture %>
             </div>
-            <p class="article-text"><%= article.text %></p>
+            <p class="article-text"><%#= article.text %></p>
           </div>
         </div>
-      <% end %>
-    </div>
+      <%# end %>
+    </div> -->
+
+    <ul class="timeline">
+      <li>
+        <div class="timeline-date">Juillet 2012</div>
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <p>Création du Fonds de dotation Collection Freddy MARTY</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">2013</div>
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <p>La municipalité fait réaliser le plan de développement du projet</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">2013... 2017</div>
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <p>Développement du projet, recherche de financements</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">Octobre 2015</div>
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <p>Accord de financement de la Région Languedoc Roussillon</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">Mars 2016</div>
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <p>Accord de financement du Conseil Départemental de l’Aude</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">Janvier-Février 2017</div>
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <p>Demande de financement européen au titre du massif pyrénéen</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
