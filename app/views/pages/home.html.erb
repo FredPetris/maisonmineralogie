@@ -46,10 +46,10 @@
     <!-- BLOCK DESCRIPTION -->
     <div class="presentation-block">
       <h3 class="subtitle">Pour une dynamique des patrimoines scientifique et culturel</h3>
-      <p class="hidden">Une collection minéralogique d’exception, des cristaux aux formes et couleurs révélées par la lumière.</p>
-      <p class="hidden">Une médiation numérique pour une dynamique des patrimoines scientifique et culturel.</p>
-      <p class="hidden">Un hébergement historique sur le chemin de Saint Jacques de Compostelle.</p>
-      <p class="hidden">Un environnement pyrénéen propice à la découverte des sciences de la Terre.</p>
+      <p class="">Une collection minéralogique d’exception, des cristaux aux formes et couleurs révélées par la lumière.</p>
+      <p class="">Une médiation numérique pour une dynamique des patrimoines scientifique et culturel.</p>
+      <p class="">Un hébergement historique sur le chemin de Saint Jacques de Compostelle.</p>
+      <p class="">Un environnement pyrénéen propice à la découverte des sciences de la Terre.</p>
       <!-- CTA - EN SAVOIR PLUS -->
        <!-- about_path -->
       <%= button_to "En Savoir +", "#", method: :get, class: "button button-white button-hover-brown-lighter" %>
@@ -152,34 +152,31 @@
 <% content_for :after_js do %>
   <script>
 
-    function fadeInUpPresentation() {
-      var elements = $('.presentation-block p.hidden');
-      var arrayLength = elements.length;
-      var delay = 2000;
-      // for (var i = 0; i < arrayLength; i++) {
-      //   // console.log(elements[i]);
-      //   // console.log(typeOf(elements[i]));
-      //     // elements[i].hide().removeClass('hidden').delay(delay += 200).fadeIn(2200);
-      // }
-      // elements[0].find('div').hide().removeClass('hidden').delay(delay += 200).fadeIn(2200)
-      // $('p.a').hide().delay(1000).fadeIn(2200);
-      // $('p.b').hide().delay(1200).fadeIn(2200);
-      $('.presentation-block p.hidden').each(function(){
-        console.log($(this));
-        $(this).hide().removeClass('hidden').delay(delay += 200).fadeIn(2200)
+    // function fadeInUpPresentation() {
+    //   var delay = 0;
+    //   $('.presentation-block p.invisible').each(function(){
+    //     $(this).delay(delay += 400).removeClass('invisible').addClass("visible")
+    //   });
+    // };
 
-});
-    };
+    // var sectionHeader = $('#header').height();
 
-    var sectionHeader = $('#header').height();
+    // $(window).scroll(function() {
+    //   var height = $(window).scrollTop();
 
-    $(window).scroll(function() {
-      var height = $(window).scrollTop();
+    //   if(height  > sectionHeader) {
+    //     // fadeInUpPresentation();
+    //     var delay = 200;
+    //     $('.presentation-block p.invisible').each(function(){
 
-      if(height  > sectionHeader) {
-        fadeInUpPresentation();
-      }
-    });
+    //       $(this).animate({
+    //         opacity: 1,
+    //       }, 1000, function() {
+    //         // Animation complete.
+    //       });
+    //     });
+    //   }
+    // });
 
   </script>
 <% end %>

@@ -125,10 +125,10 @@
   }
 
   .presentation-image {
+    position: relative;
     display: flex;
-    bottom: -15px;
-    left: 0;
-    height: 120%;
+    justify-content: center;
+    height: 530px;
     width: 40%;
 
     .front-door {
@@ -159,9 +159,14 @@
 
 .door-carousel {
   position: absolute;
-  width: 40%;
-  height: 60%;
+  width: 100%;
   top: 200px;
+  left: 0;
+
+  @media (max-width: 767px) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .mineral-card {
@@ -189,11 +194,6 @@
 
     .presentation-image, .presentation-block {
       width: 100%;
-      justify-content: center;
-    }
-
-    .door-carousel {
-      width: 60%
     }
   }
 }
