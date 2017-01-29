@@ -19,12 +19,14 @@
         padding-left: 10px;
         width: 290px;
         height: 37px;
+        font-size: 12px;
         font-weight: 100;
         border: none;
         border-radius: 2px 0 0 2px;
         box-shadow: none;
         background: $white;
         color: $black;
+        opacity: 0.9;
 
         @media (max-width: 992px) {
           border-radius: 2px 2px 0 0;
@@ -50,9 +52,8 @@
         outline: none;
 
         &:hover {
-          background-color: $white;
+          background-color: $white-medium;
           color: $black;
-          border-left: 1px solid $dark;
         }
 
         @media (max-width: 992px) {

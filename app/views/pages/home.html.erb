@@ -30,7 +30,7 @@
 
 <!-- PRESENTATION - MAISON DE LA MINERALOGIE -->
 <section class="section-presentation" id="presentation">
-  <div class="container-fluid">
+  <div class="container-fluid presentation">
     <!-- BLOCK PORTE -->
     <div class="presentation-image">
       <%= image_tag 'backgrounds/porte.png', class: "front-door"%>
@@ -46,9 +46,10 @@
     <!-- BLOCK DESCRIPTION -->
     <div class="presentation-block">
       <h3 class="subtitle">Pour une dynamique des patrimoines scientifique et culturel</h3>
-      <p>Ce projet est fondé sur l’une des plus belles collections minéralogiques privées de France, appartenant à Monsieur Freddy Marty, géologue retraité du Bureau de Recherches Géologiques et Minières, vivant à Chalabre.</p>
-      <p>Un Fonds de Dotation s’est constitué autour de cette collection pour mettre en œuvre, en partenariat avec la municipalité, une maison de la minéralogie à Chalabre.</p>
-      <p>La commune dispose d’un bâtiment historique, l’Hôtel Dieu Saint Jacques, de tous temps dédié à l’accueil et adapté pour ce projet dont elle assure la maîtrise d’ouvrage.</p>
+      <p class="hidden">Une collection minéralogique d’exception, des cristaux aux formes et couleurs révélées par la lumière.</p>
+      <p class="hidden">Une médiation numérique pour une dynamique des patrimoines scientifique et culturel.</p>
+      <p class="hidden">Un hébergement historique sur le chemin de Saint Jacques de Compostelle.</p>
+      <p class="hidden">Un environnement pyrénéen propice à la découverte des sciences de la Terre.</p>
       <!-- CTA - EN SAVOIR PLUS -->
        <!-- about_path -->
       <%= button_to "En Savoir +", "#", method: :get, class: "button button-white button-hover-brown-lighter" %>
@@ -147,3 +148,38 @@
     </div>
   </div>
 </section>
+
+<% content_for :after_js do %>
+  <script>
+
+    function fadeInUpPresentation() {
+      var elements = $('.presentation-block p.hidden');
+      var arrayLength = elements.length;
+      var delay = 2000;
+      // for (var i = 0; i < arrayLength; i++) {
+      //   // console.log(elements[i]);
+      //   // console.log(typeOf(elements[i]));
+      //     // elements[i].hide().removeClass('hidden').delay(delay += 200).fadeIn(2200);
+      // }
+      // elements[0].find('div').hide().removeClass('hidden').delay(delay += 200).fadeIn(2200)
+      // $('p.a').hide().delay(1000).fadeIn(2200);
+      // $('p.b').hide().delay(1200).fadeIn(2200);
+      $('.presentation-block p.hidden').each(function(){
+        console.log($(this));
+        $(this).hide().removeClass('hidden').delay(delay += 200).fadeIn(2200)
+
+});
+    };
+
+    var sectionHeader = $('#header').height();
+
+    $(window).scroll(function() {
+      var height = $(window).scrollTop();
+
+      if(height  > sectionHeader) {
+        fadeInUpPresentation();
+      }
+    });
+
+  </script>
+<% end %>
