@@ -1,1 +1,1 @@
-Maison de la Minéralogie de Chalabre (Aube)
+Maison de la Minéralogie de Chalabre (Aude)
