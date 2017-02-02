@@ -90,7 +90,7 @@
 
   a .play {
     height: 60px;
-    transform: translateY(150px);
+    transform: translateY(120px);
   }
 }
 
@@ -200,6 +200,7 @@
 
 .section-concept {
   color: $white;
+  padding-bottom: 60px;
 
   img { max-height: 100px; }
   p, h3 { color: $dark;  }
@@ -214,7 +215,19 @@
 }
 
 .concept-block {
-  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.concept-block-item {
+  width: 30%;
+  margin: 1%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 }
 
 // SECTION - COLLECTION

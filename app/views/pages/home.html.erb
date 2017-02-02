@@ -61,26 +61,29 @@
 <section class="section-concept <%= theme[:color] %>">
   <div class="container">
     <h2 class="section-title">Le concept</h2>
-    <div class="row">
-      <div class="col-xs-12 concept-block">
-        <!-- COLLECTION -->
-        <div class="col-xs-12 col-sm-4">
+      <div class="concept-block">
+        <div class="concept-block-item">
           <%=image_tag "icons/rock_collection.png" %>
           <p>Exposition permanente des collections générales de la Maison de la Minéralogie de Chalabre</p>
         </div>
-        <!-- EXPOSISTIONS -->
-        <div class="col-xs-12 col-sm-4">
+        <div class="concept-block-item">
           <%=image_tag "icons/fossil.png" %>
-          <p>Expositions spécifiques, didactiques et temporaires</p>
+          <p>Expositions temporaires, spécifiques et didactiques</p>
         </div>
-        <!-- THINK AROUND -->
-        <div class="col-xs-12 col-sm-4">
+        <div class="concept-block-item">
+          <%=image_tag "icons/fossil.png" %>
+          <p>Atelier numérique, travaux pratiques</p>
+        </div>
+        <div class="concept-block-item">
           <%=image_tag "icons/think_bubble.png" %>
-          <p>Conférences, colloques, sessions d’études, séminaires ayant un rapport direct ou indirect avec la minéralogie</p>
+          <p>Conférences, colloques, sessions d’études, séminaires, partenariats éducatifs et universitaires</p>
         </div>
-        <%= button_to "Découvrir", "#", method: :get, class: "button button-white button-hover-#{theme[:color]}" %>
+        <div class="concept-block-item">
+          <%=image_tag "icons/think_bubble.png" %>
+          <p>Boutique, coin détente, jardin, porte ouverte sur le territoire et les Pyrénées</p>
+        </div>
       </div>
-    </div>
+    <%= button_to "Découvrir", "#", method: :get, class: "button button-white button-hover-#{theme[:color]}" %>
   </div>
 </section>
 
