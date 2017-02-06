@@ -71,7 +71,7 @@
           <p>Expositions temporaires, spécifiques et didactiques</p>
         </div>
         <div class="concept-block-item">
-          <%=image_tag "icons/fossil.png" %>
+          <%=image_tag "icons/workshop.png" %>
           <p>Atelier numérique, travaux pratiques</p>
         </div>
         <div class="concept-block-item">
@@ -79,7 +79,7 @@
           <p>Conférences, colloques, sessions d’études, séminaires, partenariats éducatifs et universitaires</p>
         </div>
         <div class="concept-block-item">
-          <%=image_tag "icons/think_bubble.png" %>
+          <%=image_tag "icons/boutique_jardin.png" %>
           <p>Boutique, coin détente, jardin, porte ouverte sur le territoire et les Pyrénées</p>
         </div>
       </div>
@@ -138,6 +138,7 @@
         <div class="timeline-icon"></div>
         <div class="timeline-content">
           <p>Création du Fonds de dotation Collection Freddy MARTY</p>
+        <%= image_tag 'logos/logo_MMC_blanc_seul.svg', class: 'timeline-logo' %>
         </div>
       </li>
       <li>
@@ -145,6 +146,7 @@
         <div class="timeline-icon"></div>
         <div class="timeline-content">
           <p>La municipalité fait réaliser le plan de développement du projet</p>
+        <%=image_tag @logos.find_by_name("chalabre").picture, class: 'timeline-logo' %>
         </div>
       </li>
       <li>
@@ -159,6 +161,7 @@
         <div class="timeline-icon"></div>
         <div class="timeline-content">
           <p>Accord de financement de la Région Languedoc Roussillon</p>
+          <%=image_tag @logos.find_by_name("region_lr").picture, class: 'timeline-logo' %>
         </div>
       </li>
       <li>
@@ -166,6 +169,7 @@
         <div class="timeline-icon"></div>
         <div class="timeline-content">
           <p>Accord de financement du Conseil Départemental de l’Aude</p>
+          <%=image_tag @logos.find_by_name("cd11").picture, class: 'timeline-logo' %>
         </div>
       </li>
       <li>

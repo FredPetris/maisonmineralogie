@@ -68,7 +68,7 @@
     position: absolute;
     width: 100%;
     padding: 0 20px;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
@@ -82,7 +82,7 @@
     }
 
     .header-subtitle {
-      margin: 1em 0 2em;
+      margin-top: 1em;
       font-size: 2.5rem;
       font-weight: 200;
     }
@@ -90,7 +90,7 @@
 
   a .play {
     height: 60px;
-    transform: translateY(120px);
+    transform: translateY(80px);
   }
 }
 
@@ -114,6 +114,7 @@
 
 .presentation {
   display: flex;
+  justify-content: center;
 
   @media (max-width: 767px) {
     flex-direction: column;
@@ -123,6 +124,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 40%;
 
     @media (max-width: 767px) {
@@ -131,7 +133,9 @@
     }
 
     .front-door {
-      height: 100%;
+      width: auto;
+      height: auto;
+      max-width: 530px;
       max-height: 530px;
     }
   }
@@ -139,8 +143,8 @@
   .presentation-block {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    right: 0;
+    justify-content: center;
+    max-width: 500px;
     padding: 30px;
     color: $white;
 
@@ -158,12 +162,13 @@
 .door-carousel {
   position: absolute;
   width: 100%;
-  top: 200px;
+  top: 60%;
+  transform: translateY(-50%);
   left: 0;
 
   @media (max-width: 767px) {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 
@@ -186,15 +191,11 @@
   }
 }
 
-@media (max-width: 991px) {
-  .section-presentation {
-    flex-direction: column;
-
-    .presentation-image, .presentation-block {
-      width: 100%;
-    }
-  }
-}
+// @media (max-width: 992px) {
+//   .section-presentation {
+//     flex-direction: column;
+//   }
+// }
 
 // SECTION - CONCEPT
 
@@ -206,6 +207,7 @@
   p, h3 { color: $dark;  }
   p {
     margin: 20px 0;
+    padding: 0 20px;
     font-weight: 200;
   }
 
@@ -404,6 +406,7 @@
     padding-top: 20px;
 
     li {
+      position: relative;
       list-style-type: none;
       padding: 1em;
       margin: 0;
@@ -440,6 +443,16 @@
         padding: 10px;
         font-size: 14px;
     }
+
+    li .timeline-logo {
+      width: auto;
+      height: auto;
+      max-width: 120px;
+      max-height: 50px;
+      top: 20px;
+      right: 22px;
+      background: $white;
+    }
   }
 }
 
@@ -469,8 +482,13 @@
       margin-bottom: 55px;
       width: 100%;
 
+      a {
+        margin: 5%;
+      }
+
       img {
-        width: 80%;
+        max-height: 60px;
+        height: 80%;
 
         @media (max-width: 320px) {
           width: 50%;
