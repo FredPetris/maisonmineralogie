@@ -21,3 +21,25 @@
   margin-bottom: 5px;
 }
 
+.link-mailto,
+.link-mailto:active,
+.link-mailto:focus {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  color: $black;
+  margin: 0 1px;
+
+  span {
+    display: block;
+    padding: 3px 20px 3px 30px;
+    margin-left: -20px;
+    border: 1px solid #f4f4f4;
+    border-radius: 0 20px 20px 0;
+    background-color: #f4f4f4;
+    color: $black;
+  }
+}
+

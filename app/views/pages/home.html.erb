@@ -51,14 +51,12 @@
       <p class="">Un hébergement historique sur le chemin de Saint Jacques de Compostelle.</p>
       <p class="">Un environnement pyrénéen propice à la découverte des sciences de la Terre.</p>
       <!-- CTA - EN SAVOIR PLUS -->
-      <%= link_to '#animatedModal', id: 'modal-video-acteurs', class: 'button button-white button-hover-brown-lighter' do %>
-        En Savoir +
-      <% end %>
+      <div id="animated-modal" class='button button-white button-hover-brown-lighter'>
+         En Savoir +
+      </div >
     </div>
   </div>
 </section>
-
-<%= render partial: 'shared/modal_video', locals: {source: "#{ENV['ASSET_HOST']}/PjtMMC-ActeursAnimation201700207.m4v?enablejsapi=1&amp;rel=0&amp;controls=0&amp;showinfo=0" } %>
 
 
 <!-- LE CONCEPT -->
@@ -87,7 +85,7 @@
           <p>Boutique, coin détente, jardin, porte ouverte sur le territoire et les Pyrénées</p>
         </div>
       </div>
-    <%= button_to "Découvrir", "#", method: :get, class: "button button-white button-hover-#{theme[:color]}" %>
+    <%= button_to "Découvrir", "#", method: :get, class: "button-white button-hover-#{theme[:color]}" %>
   </div>
 </section>
 
@@ -204,6 +202,8 @@
     </div>
   </div>
 </section>
+
+<%= render partial: 'shared/modal_video', locals: {source: "#{ENV['ASSET_HOST']}/PjtMMC-ActeursAnimation201700207.m4v?enablejsapi=1&amp;rel=0&amp;controls=0&amp;showinfo=0" } %>
 
 <% content_for :after_js do %>
   <script>

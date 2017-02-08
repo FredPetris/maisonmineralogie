@@ -1,13 +1,31 @@
-<div id="animatedModal" class="hidden">
+<!-- <div id="animatedModal">
   <div  id="btn-close-modal" class="close-animatedModal">
-    <%= image_tag 'icons/close.svg' %>
-  </div>
+    <#%= image_tag 'icons/close.svg' %>
+  </div> -->
 
-  <div class="modal-content">
-    <div class="video-container">
-      <iframe id="playerid" width="560" height="315" src="<%= source %>" frameborder="0" allowfullscreen></iframe>
+  <div id="modal-container">
+    <div class="modal-background">
+      <div class="modal">
+        <iframe id="playerid" width="560" height="315" src="<%= source %>" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
 
+<% content_for :after_js do %>
+  <script>
+
+    $('.button').click(function(){
+      var buttonId = $(this).attr('id');
+      $('#modal-container').removeAttr('class').addClass(buttonId);
+      $('body').addClass('modal-active');
+    })
+
+    $('#modal-container').click(function(){
+      $(this).addClass('out');
+      $('body').removeClass('modal-active');
+    });
+
+  </script>
+<% end %>
 
