@@ -1,23 +1,18 @@
-<!-- <div id="animatedModal">
-  <div  id="btn-close-modal" class="close-animatedModal">
-    <#%= image_tag 'icons/close.svg' %>
-  </div> -->
-
-  <div id="modal-container">
-    <div class="modal-background">
-      <div class="modal">
-        <%= video_tag "PjtMMC-ActeursAnimation201700207.mp4", :size => "560x315", :controls => true %>
-
-        <!-- <iframe id="playerid" width="560" height="315" src="<%= source %>" frameborder="0" allowfullscreen></iframe> -->
-      </div>
+<div id="modal-container">
+  <div class="modal-background">
+    <div  id="btn-close-modal" class="close-animatedModal">
+      <%= image_tag 'icons/close.svg' %>
+    </div>
+    <div class="modal">
+      <%= video_tag "PjtMMC-ActeursAnimation201700213.mp4", :size => "560x315", :controls => true %>
     </div>
   </div>
-<!-- </div> -->
+</div>
 
 <% content_for :after_js do %>
   <script>
 
-    $('.button').click(function(){
+    $('.button-home-acteurs, .button-footer-acteurs').click(function(){
       var buttonId = $(this).attr('id');
       $('#modal-container').removeAttr('class').addClass(buttonId);
       $('body').addClass('modal-active');

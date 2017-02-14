@@ -34,3 +34,11 @@
   color: $green-green;
 }
 
+.link {
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
