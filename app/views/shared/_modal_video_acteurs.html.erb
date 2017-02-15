@@ -1,0 +1,28 @@
+<div id="modal-container-acteurs">
+  <div class="modal-background">
+    <div class="close-animatedModal">
+      <%= image_tag 'icons/close.svg' %>
+    </div>
+    <div class="modal">
+      <%= video_tag "PjtMMC-ActeursAnimation20170215.mp4", size: "560x315", controls: true %>
+    </div>
+  </div>
+</div>
+
+<% content_for :after_js do %>
+  <script>
+
+    $('.button-home-acteurs, .button-footer-acteurs').click(function(){
+      var buttonId = $(this).attr('id');
+      $('#modal-container-acteurs').removeAttr('class').addClass(buttonId);
+      $('body').addClass('modal-active');
+    })
+
+    $('#modal-container-acteurs').click(function(){
+      $(this).addClass('out');
+      $('body').removeClass('modal-active');
+    });
+
+  </script>
+<% end %>
+

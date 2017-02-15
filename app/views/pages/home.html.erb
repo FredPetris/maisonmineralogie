@@ -20,7 +20,7 @@
           <!-- <%#= render "shared/newsletter" %> -->
           <!-- BOUCING ARROW -->
           <a href="#presentation" rel="Go to the service presentation section">
-            <i><%= image_tag "icons/play.png", :class => 'play pulsed hidden-xs' %></i>
+            <i><%= image_tag "icons/play.png", class: 'play pulsed hidden-xs' %></i>
           </a>
         </div>
       </div>
@@ -50,7 +50,7 @@
       <p class="">Une médiation numérique collective et individuelle adaptée aux motivations de chacun.</p>
       <p class="">Un hébergement historique sur le chemin de Saint Jacques de Compostelle.</p>
       <p class="">Un environnement pyrénéen propice à la découverte des sciences de la Terre.</p>
-      <!-- CTA - EN SAVOIR PLUS -->
+      <!-- CTA - Les acteurs -->
       <div id="animated-modal" class='button button-white button-hover-brown-lighter button-home-acteurs'>
          Les acteurs
       </div >
@@ -63,29 +63,32 @@
 <section class="section-concept <%= theme[:color] %>">
   <div class="container">
     <h2 class="section-title">Le concept</h2>
-      <div class="concept-block">
-        <div class="concept-block-item">
-          <%=image_tag "icons/rock_collection.png" %>
-          <p>Exposition permanente des collections générales de la Maison de la Minéralogie de Chalabre</p>
-        </div>
-        <div class="concept-block-item">
-          <%=image_tag "icons/fossil.png" %>
-          <p>Expositions temporaires, spécifiques et didactiques</p>
-        </div>
-        <div class="concept-block-item">
-          <%=image_tag "icons/workshop.png" %>
-          <p>Atelier numérique, travaux pratiques</p>
-        </div>
-        <div class="concept-block-item">
-          <%=image_tag "icons/think_bubble.png" %>
-          <p>Conférences, colloques, sessions d’études, séminaires, partenariats éducatifs et universitaires</p>
-        </div>
-        <div class="concept-block-item">
-          <%=image_tag "icons/boutique_jardin.png" %>
-          <p>Boutique, coin détente, jardin, porte ouverte sur le territoire et les Pyrénées</p>
-        </div>
+    <div class="concept-block">
+      <div class="concept-block-item">
+        <%=image_tag "icons/rock_collection.png" %>
+        <p>Exposition permanente des collections générales de la Maison de la Minéralogie de Chalabre</p>
       </div>
-    <%= button_to "Le projet", "#", method: :get, class: "button-white button-hover-#{theme[:color]}" %>
+      <div class="concept-block-item">
+        <%=image_tag "icons/fossil.png" %>
+        <p>Expositions temporaires, spécifiques et didactiques</p>
+      </div>
+      <div class="concept-block-item">
+        <%=image_tag "icons/workshop.png" %>
+        <p>Atelier numérique, travaux pratiques</p>
+      </div>
+      <div class="concept-block-item">
+        <%=image_tag "icons/think_bubble.png" %>
+        <p>Conférences, colloques, sessions d’études, séminaires, partenariats éducatifs et universitaires</p>
+      </div>
+      <div class="concept-block-item">
+        <%=image_tag "icons/boutique_jardin.png" %>
+        <p>Boutique, coin détente, jardin, porte ouverte sur le territoire et les Pyrénées</p>
+      </div>
+    </div>
+    <!-- CTA -  Le projet -->
+    <div id="animated-modal" class='button button-white button-hover-brown-lighter button-home-projet'>
+       Le projet
+    </div >
   </div>
 </section>
 
@@ -148,7 +151,7 @@
         <div class="timeline-icon"></div>
         <div class="timeline-content">
           <p>La municipalité fait réaliser le plan de développement du projet</p>
-          <%=image_tag 'logos/Blason_Chalabre_100px.png', class: 'timeline-logo' %>
+          <%=image_tag 'logos/Logo_Chalabre_vertical.jpg', class: 'timeline-logo' %>
         </div>
       </li>
       <li>
@@ -194,7 +197,9 @@
         <div class="logos">
           <% logos_group.each do |logo| %>
             <% if logo %>
-              <%= link_to (image_tag logo.picture), logo.link, target: "_blank" %>
+              <%= link_to logo.link, target: "_blank" do %>
+                <%= image_tag logo.picture, class: "#{logo.name}" %>
+              <% end %>
             <% end %>
           <% end %>
         </div>

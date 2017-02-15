@@ -200,12 +200,6 @@
   }
 }
 
-// @media (max-width: 991px) {
-//   .section-presentation {
-//     flex-direction: column;
-//   }
-// }
-
 // SECTION - CONCEPT
 
 .section-concept {
@@ -239,6 +233,11 @@
   @media (max-width: 767px) {
     width: 100%;
   }
+}
+
+.button-home-projet {
+  display: flex;
+  width: 120px;
 }
 
 // SECTION - COLLECTION
@@ -278,7 +277,6 @@
       max-height: 100%;
       max-width: 100%;
       background-color: $dark;
-      // @include transition(all 0.2s ease-in-out);
     }
 
     .box-shadow {
@@ -472,7 +470,7 @@
       position: absolute;
       width: auto;
       height: auto;
-      max-width: 120px;
+      max-width: 50px;
       max-height: 50px;
       right: 22px;
       bottom: 5px;
@@ -525,6 +523,10 @@
         @media (max-width: 320px) {
           width: 50%;
           margin-bottom: 15px;
+        }
+
+        &.cd11 {
+          transform: scale(.8);
         }
       }
     }

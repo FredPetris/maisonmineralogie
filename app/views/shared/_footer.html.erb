@@ -1,13 +1,18 @@
 <footer>
   <div class="container footer-content">
+    <%= image_tag 'illustrations/tampon.svg', class: 'footer-tampon' %>
     <div class="row">
       <div class="col-xs-4 col-sm-2 footer-logo">
         <%= image_tag 'logos/logo_MMC_blanc_map.svg' %>
       </div>
       <div class="col-xs-8 col-sm-4 footer-project">
         <ul>
-          <li><%= link_to "Le projet", root_path %></li>
-          <li><div id="animated-modal" class='link button-footer-acteurs'>
+          <li>
+            <div id="animated-modal" class='link button-footer-projet'>
+              Le projet
+            </div >
+          <li>
+            <div id="animated-modal" class='link button-footer-acteurs'>
               Les acteurs
             </div >
           </li>
@@ -31,4 +36,7 @@
   </div>
 </footer>
 
-<%= render partial: 'shared/modal_video', locals: {source: "#{ENV['ASSET_HOST']}/PjtMMC-ActeursAnimation201700207.m4v?enablejsapi=1&amp;rel=0&amp;controls=0&amp;showinfo=0" } %>
+<%= render partial: 'shared/modal_video_acteurs' %>
+<%= render partial: 'shared/modal_video_projet' %>
+
+
