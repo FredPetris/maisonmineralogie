@@ -113,7 +113,12 @@ footer {
 
   @media (min-width: 321px) {
     width: 135px;
-    left: 33%;
+    left: 50%;
     transform: rotate(30deg);
   }
+
+  @media (min-width: 768px) {
+    left: 33%;
+  }
+
 }
