@@ -23,7 +23,8 @@
 
 .link-mailto,
 .link-mailto:active,
-.link-mailto:focus {
+.link-mailto:focus,
+.link-mailto:hover {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -45,5 +46,10 @@
       font-size: 13px;
     }
   }
+}
+
+.link-mailto:hover .fa {
+  text-decoration: none;
+  transform: rotate(15deg);
 }
 
