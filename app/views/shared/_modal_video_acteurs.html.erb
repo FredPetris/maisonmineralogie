@@ -4,7 +4,7 @@
       <%= image_tag 'icons/close.svg' %>
     </div>
     <div class="modal">
-      <%= video_tag "PjtMMC-ActeursAnimation20170215.mp4", size: "560x315", controls: true %>
+      <%= video_tag "PjtMMC-ActeursAnimation20171025.mp4", size: "560x315", controls: true %>
     </div>
   </div>
 </div>
@@ -14,6 +14,8 @@
 
     $('.button-home-acteurs, .button-footer-acteurs').click(function(){
       var buttonId = $(this).attr('id');
+      $('video')[0].currentTime = 0;
+      $('video')[0].play();
       $('#modal-container-acteurs').removeAttr('class').addClass(buttonId);
       $('body').addClass('modal-active');
     })
